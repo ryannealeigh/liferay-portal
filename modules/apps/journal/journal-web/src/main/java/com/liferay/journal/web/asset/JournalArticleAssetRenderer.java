@@ -238,7 +238,7 @@ public class JournalArticleAssetRenderer
 		catch (Exception e) {
 		}
 
-        return HtmlUtil.stripHtml(summary);
+		return HtmlUtil.stripHtml(summary);
 	}
 
 	@Override
