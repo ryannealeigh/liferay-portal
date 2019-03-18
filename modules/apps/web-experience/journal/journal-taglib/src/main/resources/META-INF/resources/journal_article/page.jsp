@@ -1,4 +1,3 @@
-<%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
@@ -21,7 +20,7 @@ JournalArticleDisplay articleDisplay = (JournalArticleDisplay)request.getAttribu
 boolean showTitle = GetterUtil.getBoolean((String)request.getAttribute("liferay-journal:journal-article:showTitle"));
 %>
 
-<div class="clearfix journal-content-article" data-analytics-asset-id="<%= articleDisplay.getArticleId() %>" data-analytics-asset-title="<%= articleDisplay.getTitle() %>" data-analytics-asset-type="web-content">
+<div class="clearfix journal-content-article" data-analytics-asset-id="<%= articleDisplay.getArticleId() %>" data-analytics-asset-title="<%= HtmlUtil.escapeAttribute(articleDisplay.getTitle()) %>" data-analytics-asset-type="web-content">
 	<c:if test="<%= showTitle %>">
 		<%= articleDisplay.getTitle() %>
 	</c:if>
