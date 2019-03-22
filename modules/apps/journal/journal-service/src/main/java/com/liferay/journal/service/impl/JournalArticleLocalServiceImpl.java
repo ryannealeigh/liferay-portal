@@ -413,6 +413,18 @@ public class JournalArticleLocalServiceImpl
 		Map<String, String> urlTitleMap = _getURLTitleMap(
 			groupId, resourcePrimKey, friendlyURLMap, titleMap);
 
+		for (Map.Entry<String, String> urlTitleMapEntry :
+				urlTitleMap.entrySet()) {
+
+			String urlTitle = urlTitleMapEntry.getValue();
+
+			if (urlTitle.contains(StringPool.SLASH)) {
+				urlTitle = urlTitle.replace(StringPool.SLASH, StringPool.DASH);
+
+				urlTitleMap.put(urlTitleMapEntry.getKey(), urlTitle);
+			}
+		}
+
 		String urlTitle = urlTitleMap.get(LocaleUtil.toLanguageId(locale));
 
 		article.setUuid(serviceContext.getUuid());
