@@ -378,6 +378,8 @@ public class ComboServlet extends HttpServlet {
 						baseURL = resourcePath.substring(0, slashIndex + 1);
 					}
 
+					baseURL = PortalUtil.getPathProxy() + baseURL;
+
 					stringFileContent = AggregateUtil.updateRelativeURLs(
 						stringFileContent, baseURL);
 
