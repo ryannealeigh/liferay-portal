@@ -43,7 +43,7 @@
 			</#if>
 
 			<main id="content" role="main">
-				<h1 class="hide-accessible">${the_title}</h1>
+				<span class="hide-accessible">${the_title}</span>
 
 				<#if selectable>
 					<@liferay_util["include"] page=content_include />

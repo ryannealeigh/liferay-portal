@@ -23,7 +23,7 @@
 <div class="container-fluid" id="wrapper">
 	<header id="banner" role="banner">
 		<div id="heading">
-			<h1 class="site-title">
+			<div class="site-title">
 				<a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
 					<img alt="${logo_description}" height="${site_logo_height}" src="${site_logo}" width="${site_logo_width}" />
 				</a>
@@ -33,7 +33,7 @@
 						${site_name}
 					</span>
 				</#if>
-			</h1>
+			</div>
 		</div>
 
 		<#if !is_signed_in>
@@ -46,7 +46,7 @@
 	</header>
 
 	<section id="content">
-		<h1 class="hide-accessible">${the_title}</h1>
+		<span class="hide-accessible">${the_title}</span>
 
 		<#if selectable>
 			<@liferay_util["include"] page=content_include />
