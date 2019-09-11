@@ -208,3 +208,37 @@ The compatibility `liferay.frontend.ProgessBar` component is no longer used and
 was already deprecated in `7.2`.
 
 ---------------------------------------
+
+### Liferay `AssetEntries_AssetCategories` Table Has Been Removed
+- **Date:** 2019-Sep-11
+- **JIRA Tickets:** [LPS-99973](https://issues.liferay.com/browse/LPS-99973),
+[LPS-89065](https://issues.liferay.com/browse/LPS-89065)
+
+#### What changed?
+
+Previously, Liferay included a mapping table and a corresponding interface for
+the relationship between AssetEntry and AssetCategory in
+`AssetEntryLocalService` and `AssetCategoryLocalService`. This mapping table and
+the corresponding interface has been removed.
+
+#### Who is affected?
+
+This affects any content or code that relies on calling the old interfaces for
+the `AssetEntries_AssetCategories` relationship, through the
+`AssetEntryLocalService` and `AssetCategoryLocalService`.
+
+#### How should I update my code?
+
+Use the new methods in `AssetEntryAssetCategoryRelLocalService` to retrieve the
+same data as before. Note, the new method signatures are the same as before, but
+are just located in a different service.
+
+#### Why was this change made?
+
+This change was made due to changes resulting from
+[LPS-76488](https://issues.liferay.com/browse/LPS-76488), which was introduced
+so that developers would be able to specify a priority when assigning Assets to
+AssetCategory in order to make it possible to control the order of a list of
+assets with a given category.
+
+---------------------------------------
